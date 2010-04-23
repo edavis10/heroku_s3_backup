@@ -1,6 +1,18 @@
 = heroku_s3_backup
 
-Description goes here.
+Gem to backup your database on Heroku.com to S3.
+
+== Usage
+
+1. Add the heroku_s3_backup gem to your .gems file for Heroku
+2. Add your S3 config to Heroku
+   heroku config:add s3_access_key_id=YOUR_ID s3_secret_access_key=YOUR_KEY
+3. Run the HerokuS3Backup.backup method from your console or a cronjob
+   task :cron => :environment do
+     HerokuS3Backup.backup
+   end
+
+The blog post at http://almosteffortless.com/2010/04/14/automated-heroku-backups/ has some more detailed instructions.
 
 == Note on Patches/Pull Requests
  
@@ -13,5 +25,7 @@ Description goes here.
 * Send me a pull request. Bonus points for topic branches.
 
 == Copyright
+
+Code stolen from Trevor Turk (http://almosteffortless.com/2010/04/14/automated-heroku-backups/) and packaged by Eric Davis.
 
 Copyright (c) 2010 Eric Davis. See LICENSE for details.

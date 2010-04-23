@@ -5,12 +5,20 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "heroku_s3_backup"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Gem to backup your database on Heroku.com to S3.}
+    gem.description = %Q{http://almosteffortless.com/2010/04/14/automated-heroku-backups/}
     gem.email = "edavis@littlestreamsoftware.com"
     gem.homepage = "http://github.com/edavis10/heroku_s3_backup"
-    gem.authors = ["Eric Davis"]
+    gem.authors = ["Eric Davis", "Trevor Turk"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_dependency('right_aws', '~> 1.10')
+    gem.files =  FileList[
+                          "[A-Z]*",
+                          "init.rb",
+                          "rails/init.rb",
+                          "{bin,generators,lib,test,app}/**/*",
+                          'lib/jeweler/templates/.gitignore'
+                         ]
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
