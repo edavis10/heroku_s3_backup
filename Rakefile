@@ -11,7 +11,7 @@ begin
     gem.homepage = "http://github.com/edavis10/heroku_s3_backup"
     gem.authors = ["Eric Davis", "Trevor Turk"]
     gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    gem.add_dependency('right_aws', '~> 1.10')
+    gem.add_dependency('right_aws', '~> 2.1.0')
     gem.files =  FileList[
                           "[A-Z]*",
                           "init.rb",
