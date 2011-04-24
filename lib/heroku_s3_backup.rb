@@ -1,6 +1,7 @@
 class HerokuS3Backup
   def self.backup
     begin
+      require 'digest/md5'
       require 'right_aws'
       puts "[#{Time.now}] heroku:backup started"
       name = "#{ENV['APP_NAME']}-#{Time.now.strftime('%Y-%m-%d-%H%M%S')}.dump"
